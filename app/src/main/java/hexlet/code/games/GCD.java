@@ -30,7 +30,7 @@ public class GCD {
                 }
             } else {
                 System.out.println(ans + " is wrong answer ;(. Correct answer was " + gcd
-                        + "." + "\nLet's try again, " + Engine.userName);
+                        + "." + "\nLet's try again, " + Engine.userName + "!");
                 break;
             }
         }

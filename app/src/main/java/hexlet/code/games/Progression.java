@@ -32,7 +32,7 @@ public class Progression {
                 }
             } else {
                 System.out.println(ans + " is wrong answer ;(. Correct answer was " + hiddenNumber
-                        + "." + "\nLet's try again, " + Engine.userName);
+                        + "." + "\nLet's try again, " + Engine.userName + "!");
                 break;
             }
         }

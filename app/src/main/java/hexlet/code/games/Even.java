@@ -21,12 +21,12 @@ public class Even {
                 }
             } else {
                 if (ans.equals("yes")) {
-                    System.out.println(ans + " is wrong answer ;(. Correct answer was 'no'."
-                            + "\nLet's try again, " + Engine.userName);
+                    System.out.println("'" + ans + "'" + " is wrong answer ;(. Correct answer was 'no'."
+                            + "\nLet's try again, " + Engine.userName + "!");
                     break;
                 } else {
-                    System.out.println(ans + " is wrong answer ;(. Correct answer was 'yes'."
-                            + "\nLet's try again, " + Engine.userName);
+                    System.out.println("'" + ans + "'" + " is wrong answer ;(. Correct answer was 'yes'."
+                            + "\nLet's try again, " + Engine.userName + "!");
                     break;
                 }
             }

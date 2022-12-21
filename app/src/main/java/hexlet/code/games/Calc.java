@@ -33,7 +33,7 @@ public class Calc {
                 }
             } else {
                 System.out.println(ans + " is wrong answer ;(. Correct answer was " + intExample[rdmIndex]
-                        + "." + "\nLet's try again, " + Engine.userName);
+                        + "." + "\nLet's try again, " + Engine.userName + "!");
                 break;
 
             }
