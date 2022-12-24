@@ -21,8 +21,8 @@ public class Progression {
                 example[i] = Integer.toString(firstElement + step * i);
             }
             var hiddenNumber = example[rdmIndx];
-            example[rdmIndx] = ".. ";
-            System.out.println("Question: " + Arrays.toString(example));
+            example[rdmIndx] = "..";
+            System.out.println("Question: " + String.join(" ",example));
             var ans = scan.next();
             System.out.println("Your answer: " + ans);
             if (ans.equals(hiddenNumber)) {
