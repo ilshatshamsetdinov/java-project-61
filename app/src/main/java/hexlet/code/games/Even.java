@@ -9,6 +9,7 @@ public class Even {
         return digit % 2 == 0;
     }
     public static void logicEven() {
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < maxRound; i++) {
             rdmDigits();
             System.out.println("Question: " + digit);

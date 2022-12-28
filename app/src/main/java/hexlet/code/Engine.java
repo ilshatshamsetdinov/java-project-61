@@ -15,36 +15,29 @@ public class Engine {
         int choice = scan.nextInt();
         System.out.println("Your choice: " + choice);
         switch (choice) {
-            case 0:
-                break;
-            case 1:
+            case 1 -> greet();
+            case 2 -> {
                 greet();
-                break;
-            case 2:
-                greet();
-                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
                 logicEven();
-                break;
-            case 3:
+            }
+            case 3 -> {
                 greet();
                 Calc.itsCalc();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 greet();
-                System.out.println("Find the greatest common divisor of given numbers.");
                 GCD.Gcd();
-                break;
-            case 5:
+            }
+            case 5 -> {
                 greet();
                 Progression.logicProgr();
-                break;
-            case 6:
+            }
+            case 6 -> {
                 greet();
-                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 Prime.isPrime();
-                break;
-            default:
-                break;
+            }
+            default -> {
+            }
         }
     }
 

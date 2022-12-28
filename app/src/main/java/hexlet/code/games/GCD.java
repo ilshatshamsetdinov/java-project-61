@@ -17,6 +17,7 @@ public class GCD {
         return gcd;
     }
     public static void Gcd() {
+        System.out.println("Find the greatest common divisor of given numbers.");
         for (int i = 0; i < maxRound; i++) {
             rdmDigits();
             var correctAnswer = Integer.toString(isGcd());

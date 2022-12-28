@@ -15,6 +15,7 @@ public class Prime {
         } return true;
     }
     public static void isPrime() {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         for (var i = 0; i < maxRound; i++) {
             rdmDigits();
             System.out.println("Question: " + digit);
