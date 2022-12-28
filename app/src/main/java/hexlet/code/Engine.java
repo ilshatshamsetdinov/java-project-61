@@ -3,6 +3,9 @@ package hexlet.code;
 import java.util.Scanner;
 
 import hexlet.code.games.*;
+import org.apache.commons.lang3.RandomUtils;
+
+import static hexlet.code.games.Even.logicEven;
 
 public class Engine {
     public static void enter() {
@@ -19,7 +22,8 @@ public class Engine {
                 break;
             case 2:
                 greet();
-                Even.isEven();
+                System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+                logicEven();
                 break;
             case 3:
                 greet();
@@ -27,14 +31,16 @@ public class Engine {
                 break;
             case 4:
                 greet();
-                GCD.isGcd();
+                System.out.println("Find the greatest common divisor of given numbers.");
+                GCD.Gcd();
                 break;
             case 5:
                 greet();
-                Progression.isProgression();
+                Progression.logicProgr();
                 break;
             case 6:
                 greet();
+                System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
                 Prime.isPrime();
                 break;
             default:
@@ -42,6 +48,13 @@ public class Engine {
         }
     }
 
+
+    public static String ans;
+    public static void answer() {
+        Scanner scana = new Scanner(System.in);
+        ans = scana.next();
+        System.out.println("Your answer: " + ans);
+    }
     public static String userName;
     public static void greet() {
         System.out.println("Welcome to the Brain Games!");
@@ -50,4 +63,17 @@ public class Engine {
         userName = scan.next();
         System.out.println("Hello, " + userName + "!");
     }
+    public static final int maxRound = 3;
+    public static int digit;
+    public static int digit2;
+    public static void rdmDigits() {
+        digit = RandomUtils.nextInt(2, 100);
+        digit2 = RandomUtils.nextInt(2, 100);
+    }
+    public static void wrongAnswer(String ans, String correctAnswer) {
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", ans, correctAnswer);
+        System.out.printf("Let's try again, %s!\n", userName);
+    }
+
 }
+

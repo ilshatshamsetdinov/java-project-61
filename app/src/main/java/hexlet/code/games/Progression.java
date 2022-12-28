@@ -7,35 +7,39 @@ import hexlet.code.Engine;
 
 import org.apache.commons.lang3.RandomUtils;
 
+import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.ans;
+
 public class Progression {
-    public static void isProgression() {
-        System.out.println("What number is missing in the progression?");
-        Scanner scan = new Scanner(System.in);
-        for (var x = 3; x > 0; x--) {
-            var progressionLength = RandomUtils.nextInt(5, 10);
-            var firstElement = RandomUtils.nextInt(1, 100);
-            var step = RandomUtils.nextInt(1, 10);
-            var rdmIndx = RandomUtils.nextInt(0, progressionLength);
-            String[] example = new String[progressionLength];
-            for (var i = 0; i < example.length; i++) {
-                example[i] = Integer.toString(firstElement + step * i);
-            }
-            var hiddenNumber = example[rdmIndx];
-            example[rdmIndx] = "..";
-            System.out.println("Question: " + String.join(" ",example));
-            var ans = scan.next();
-            System.out.println("Your answer: " + ans);
-            if (ans.equals(hiddenNumber)) {
+    private static int first;
+    private static int step;
+    private static String hiddenNumber;
+    public static void logicProgr() {
+        for (var i = 0; i < maxRound; i++) {
+            first = RandomUtils.nextInt(1, 50);
+            step = RandomUtils.nextInt(1, 10);
+            array();
+            answer();
+            var correctAnswer = hiddenNumber;
+            if (ans.equals(correctAnswer)) {
                 System.out.println("Correct!");
-                if (x == 1) {
-                    System.out.println("Congratulations, " + Engine.userName + "!");
-                }
             } else {
-                System.out.println(ans + " is wrong answer ;(. Correct answer was " + hiddenNumber
-                        + "." + "\nLet's try again, " + Engine.userName + "!");
-                break;
+                wrongAnswer(ans, correctAnswer);
+                return;
             }
         }
+        System.out.println("Congratulations, " + userName + "!");
+    }
+    public static void array(){
+        int progressionLength = RandomUtils.nextInt(5,10);
+        String[] progressionArray = new String[progressionLength];
+        for (var i = 0; i < progressionArray.length; i++) {
+            progressionArray[i] = Integer.toString(first + step * i);
+        }
+        int randomIndex = RandomUtils.nextInt(0, progressionLength);
+        hiddenNumber = progressionArray[randomIndex];
+        progressionArray[randomIndex] = "..";
+        System.out.println("Question: " + String.join(" ",progressionArray));
     }
 }
 
