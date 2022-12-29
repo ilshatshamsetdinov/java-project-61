@@ -11,6 +11,7 @@ public class Progression {
     private static int step;
     private static String hiddenNumber;
     public static void logicProgr() {
+        System.out.println("What number is missing in the progression?");
         for (var i = 0; i < MAXROUND; i++) {
             first = RandomUtils.nextInt(1, 50);
             step = RandomUtils.nextInt(1, 10);
