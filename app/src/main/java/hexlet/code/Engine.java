@@ -26,7 +26,7 @@ public class Engine {
             }
             case 4 -> {
                 greet();
-                GCD.Gcd();
+                GCD.gcd();
             }
             case 5 -> {
                 greet();
@@ -42,13 +42,16 @@ public class Engine {
     }
 
 
-    public static String ans;
+    public static String answer;
+
     public static void answer() {
         Scanner scana = new Scanner(System.in);
-        ans = scana.next();
-        System.out.println("Your answer: " + ans);
+        answer = scana.next();
+        System.out.println("Your answer: " + answer);
     }
+
     public static String userName;
+
     public static void greet() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -56,17 +59,26 @@ public class Engine {
         userName = scan.next();
         System.out.println("Hello, " + userName + "!");
     }
-    public static final int maxRound = 3;
+
+    public static final int MAXROUND = 3;
     public static int digit;
     public static int digit2;
+
     public static void rdmDigits() {
         digit = RandomUtils.nextInt(2, 100);
         digit2 = RandomUtils.nextInt(2, 100);
     }
-    public static void wrongAnswer(String ans, String correctAnswer) {
-        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", ans, correctAnswer);
+    public static void wrongAnswer(String correctAnswer) {
+        System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
         System.out.printf("Let's try again, %s!\n", userName);
     }
-
+    public static boolean condition(String correctAnswer) {
+        if (answer.equals(correctAnswer)) {
+            System.out.println("Correct!");
+        } else {
+            wrongAnswer(correctAnswer);
+            return true;
+        }
+        return false;
+    }
 }
-

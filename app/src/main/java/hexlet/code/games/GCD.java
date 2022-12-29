@@ -1,7 +1,5 @@
 package hexlet.code.games;
 
-import java.util.Scanner;
-
 import hexlet.code.Engine;
 
 import static hexlet.code.Engine.*;
@@ -16,19 +14,15 @@ public class GCD {
         }
         return gcd;
     }
-    public static void Gcd() {
+    public static void gcd() {
         System.out.println("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < maxRound; i++) {
+        for (int i = 0; i < MAXROUND; i++) {
             rdmDigits();
             var correctAnswer = Integer.toString(isGcd());
             System.out.println("Question: " + digit + " " + digit2);
             answer();
-            if (ans.equals(correctAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                wrongAnswer(ans, correctAnswer);
+            if (condition(correctAnswer)) {
                 return;
-
             }
         }
         System.out.println("Congratulations, " + Engine.userName + "!");

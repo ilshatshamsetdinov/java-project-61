@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import static hexlet.code.Engine.*;
 
-import static hexlet.code.Engine.maxRound;
+import static hexlet.code.Engine.MAXROUND;
 
 public class Prime {
     private static boolean numbPrime() {
@@ -12,22 +12,22 @@ public class Prime {
             if (digit % i == 0) {
                 return false;
             }
-        } return true;
+        }
+        return true;
     }
+
     public static void isPrime() {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        for (var i = 0; i < maxRound; i++) {
+        for (var i = 0; i < MAXROUND; i++) {
             rdmDigits();
             System.out.println("Question: " + digit);
             answer();
             var correctAnswer = numbPrime() ? "yes" : "no";
-            if (ans.equals(correctAnswer)) {
-                System.out.println("Correct!");
-            } else {
-                wrongAnswer(ans, correctAnswer);
+            if (condition(correctAnswer)) {
                 return;
-                }
             }
-        System.out.println("Congratulations, " + Engine.userName + "!");
+            System.out.println("Congratulations, " + Engine.userName + "!");
         }
     }
+}
+
