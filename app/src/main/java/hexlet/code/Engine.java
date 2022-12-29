@@ -15,32 +15,32 @@ public class Engine {
         int choice = scan.nextInt();
         System.out.println("Your choice: " + choice);
 
-        final var GREETING = 1;
-        final var EVEN = 2;
-        final var CALC = 3;
-        final var GCDD = 4;
-        final var PROGR = 5;
-        final var PRIME = 6;
+        final var Greeting = 1;
+        final var Even = 2;
+        final var Calculate = 3;
+        final var Gcdd = 4;
+        final var Progresssion = 5;
+        final var Primee = 6;
 
         switch (choice) {
-            case GREETING -> greet();
-            case EVEN -> {
+            case Greeting -> greet();
+            case Even -> {
                 greet();
                 logicEven();
             }
-            case CALC -> {
+            case Calculate -> {
                 greet();
                 Calc.itsCalc();
             }
-            case GCDD -> {
+            case Gcdd -> {
                 greet();
                 GCD.gcd();
             }
-            case PROGR -> {
+            case Progresssion -> {
                 greet();
                 Progression.logicProgr();
             }
-            case PRIME -> {
+            case Primee -> {
                 greet();
                 Prime.isPrime();
             }
