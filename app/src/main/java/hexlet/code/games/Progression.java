@@ -13,8 +13,10 @@ public class Progression {
     public static void logicProgr() {
         System.out.println("What number is missing in the progression?");
         for (var i = 0; i < MAXROUND; i++) {
-            first = RandomUtils.nextInt(1, 50);
-            step = RandomUtils.nextInt(1, 10);
+            final var FIRSTLIMIT = 50;
+            final var STEPLIMIT = 10;
+            first = RandomUtils.nextInt(1, FIRSTLIMIT);
+            step = RandomUtils.nextInt(1, STEPLIMIT);
             array();
             answer();
             var correctAnswer = hiddenNumber;
@@ -25,7 +27,9 @@ public class Progression {
         System.out.println("Congratulations, " + userName + "!");
     }
     public static void array() {
-        int progressionLength = RandomUtils.nextInt(5, 10);
+        final var MINLIMIT = 5;
+        final var MAXLIMIT = 10;
+        int progressionLength = RandomUtils.nextInt(MINLIMIT, MAXLIMIT);
         String[] progressionArray = new String[progressionLength];
         for (var i = 0; i < progressionArray.length; i++) {
             progressionArray[i] = Integer.toString(first + step * i);

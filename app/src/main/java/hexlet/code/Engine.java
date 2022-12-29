@@ -14,25 +14,33 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
         System.out.println("Your choice: " + choice);
+
+        final var GREETING = 1;
+        final var EVEN = 2;
+        final var CALC = 3;
+        final var GCDD = 4;
+        final var PROGR = 5;
+        final var PRIME = 6;
+
         switch (choice) {
-            case 1 -> greet();
-            case 2 -> {
+            case GREETING -> greet();
+            case EVEN -> {
                 greet();
                 logicEven();
             }
-            case 3 -> {
+            case CALC -> {
                 greet();
                 Calc.itsCalc();
             }
-            case 4 -> {
+            case GCDD -> {
                 greet();
                 GCD.gcd();
             }
-            case 5 -> {
+            case PROGR -> {
                 greet();
                 Progression.logicProgr();
             }
-            case 6 -> {
+            case PRIME -> {
                 greet();
                 Prime.isPrime();
             }
@@ -65,8 +73,9 @@ public class Engine {
     public static int digit2;
 
     public static void rdmDigits() {
-        digit = RandomUtils.nextInt(2, 100);
-        digit2 = RandomUtils.nextInt(2, 100);
+        final var LIMIT = 100;
+        digit = RandomUtils.nextInt(2, LIMIT);
+        digit2 = RandomUtils.nextInt(2, LIMIT);
     }
     public static void wrongAnswer(String correctAnswer) {
         System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);

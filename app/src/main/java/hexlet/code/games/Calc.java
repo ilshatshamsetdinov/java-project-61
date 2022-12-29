@@ -11,13 +11,14 @@ public class Calc {
         System.out.println("What is the result of the expression?");
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < MAXROUND; i++) {
+            final var ARRAYLENGTH = 3;
             rdmDigits();
-            String[] examples = new String[3];
+            String[] examples = new String[ARRAYLENGTH];
             examples[0] = digit + " + " + digit2;
             examples[1] = digit + " - " + digit2;
             examples[2] = digit + " * " + digit2;
             int rdmIndex = RandomUtils.nextInt(0, 2);
-            int[] intExample = new int[3];
+            int[] intExample = new int[ARRAYLENGTH];
             intExample[0] = digit + digit2;
             intExample[1] = digit - digit2;
             intExample[2] = digit * digit2;
