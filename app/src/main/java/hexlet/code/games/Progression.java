@@ -2,15 +2,16 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.MAXROUND;
 
-import static hexlet.code.Engine.answer;
+import static hexlet.code.Engine.userAnswer;
+import static hexlet.code.Engine.condition;
 
 public class Progression {
     private static int first;
     private static int step;
     private static String hiddenNumber;
-    public static void logicProgr() {
+    public static void logicProgr(String userName) {
         System.out.println("What number is missing in the progression?");
         for (var i = 0; i < MAXROUND; i++) {
             final var firstlimit = 50;
@@ -18,9 +19,9 @@ public class Progression {
             first = RandomUtils.nextInt(1, firstlimit);
             step = RandomUtils.nextInt(1, steplimit);
             array();
-            answer();
+            var answer = userAnswer();
             var correctAnswer = hiddenNumber;
-            if (condition(correctAnswer)) {
+            if (condition(answer, correctAnswer, userName)) {
                 return;
             }
         }
