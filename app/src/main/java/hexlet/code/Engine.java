@@ -22,23 +22,26 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
         int choice = scan.nextInt();
         System.out.println("Your choice: " + choice);
-        greet();
-        String userName = userNames();
-        System.out.println("Hello, " + userName + "!");
-        game(choice, userName);
+        if (choice == 1) {
+            greet();
+            String userName = userNames();
+            System.out.println("Hello, " + userName + "!");
+        } else if (choice != 0) {
+            greet();
+            String userName = userNames();
+            System.out.println("Hello, " + userName + "!");
+            game(choice, userName);
+        }
     }
 
     public static void game(int choice, String userName) {
-
-        final var greeting = 1;
         final var even = 2;
         final var calculate = 3;
         final var gcdd = 4;
         final var progresssion = 5;
         final var primee = 6;
-
         switch (choice) {
-            case greeting -> greet();
+
             case even -> logicEven(userName);
 
             case calculate -> itsCalc(userName);
