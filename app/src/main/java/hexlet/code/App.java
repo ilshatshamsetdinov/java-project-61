@@ -2,7 +2,8 @@ package hexlet.code;
 
 public class App {
     public static void main(String[] args) {
-        Engine.enter();
+        Menu.enter();
+        Menu.game();
     }
 }
 
