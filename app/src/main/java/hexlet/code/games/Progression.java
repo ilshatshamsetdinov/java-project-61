@@ -2,11 +2,11 @@ package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
 
-public class Progression implements Game {
+public final class Progression implements Game {
 
     @Override
     public String getTask() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        return "What number is missing in the progression?";
     }
 
     @Override

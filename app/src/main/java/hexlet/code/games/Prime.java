@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.rdmDigits;
 
-public class Prime implements Game {
+public final class Prime implements Game {
     private static boolean getPrime(int digit) {
         for (int i = 2; i < digit; i++) {
             if (digit % i == 0) {

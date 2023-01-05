@@ -12,7 +12,7 @@ public class Engine {
     }
     public static void doGame(String userName, Game questionAndAnswer, String getTask) {
         System.out.println(getTask);
-        int maxround = 3;
+        final int maxround = 3;
         for (int i = 0; i < maxround; i++) {
             var massive = questionAndAnswer.getGameData();
             var question = massive[0];

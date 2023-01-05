@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomUtils;
 import static hexlet.code.Engine.rdmDigits;
 
 
-public class Calc implements Game {
+public final class Calc implements Game {
     public static String getAnswer(String operator, int digit, int digit2) {
         var resultAnswer = "";
         switch (operator) {
@@ -31,7 +31,8 @@ public class Calc implements Game {
         var digit = rdmDigits();
         var digit2 = rdmDigits();
         String[] operators = {"+", "-", "*"};
-        int rdmOperatorIndex = RandomUtils.nextInt(0, 2);
+        final int indexLimit = 2;
+        int rdmOperatorIndex = RandomUtils.nextInt(0, indexLimit);
         String rdmOperator = operators[rdmOperatorIndex];
         var resultQuestion = digit + " " + rdmOperator + " " + digit2;
         var question = "Question: " + resultQuestion;

@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.rdmDigits;
 
-public class Even implements Game {
+public final class Even implements Game {
     public static boolean getEven(int digit) {
         return digit % 2 == 0;
     }

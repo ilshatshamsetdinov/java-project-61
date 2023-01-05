@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import static hexlet.code.Engine.rdmDigits;
 
-public class Gcd implements Game {
+public final class Gcd implements Game {
     public static int isGcd(int digit, int digit2) {
         int gcd = 1;
         for (int i = 1; i <= digit && i <= digit2; i++) {
