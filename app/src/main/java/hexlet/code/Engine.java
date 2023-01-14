@@ -2,6 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Game;
 import org.apache.commons.lang3.RandomUtils;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -10,32 +11,41 @@ public class Engine {
         final var limit = 100;
         return RandomUtils.nextInt(2, limit);
     }
-    public static void doGame(String userName, Game questionAndAnswer, String getTask) {
+    public static void launchGame(Game questionAndAnswer, Game task) {
+        greeting();
+        Scanner scana = new Scanner(System.in);
+        String userName = scana.next();
+        greetingEnd(userName);
+        var getTask = task.getTask();
         System.out.println(getTask);
-        final int maxround = 3;
-        for (int i = 0; i < maxround; i++) {
-            var massive = questionAndAnswer.getGameData();
-            var question = massive[0];
-            var correctAnswer = massive[1];
-            System.out.println(question);
+        for (int i = 0; i < MAXROUND; i++) {
+            var data = questionAndAnswer.getGameData();
+            var question = data[0];
+            var correctAnswer = data[1];
+            var askQuestion = "Question: " + question;
+            System.out.println(askQuestion);
             Scanner scan = new Scanner(System.in);
             String answer = scan.next();
             System.out.println("Your answer: " + answer);
-            if (checkAnswer(answer, correctAnswer, userName)) {
-                return;
+            if (answer.equals(correctAnswer)) {
+                System.out.println("Correct!");
+                if (i == 2) {
+                    System.out.println("Congratulations, " + userName + "!");
+                }
+            } else {
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
+                System.out.printf("Let's try again, %s!\n", userName);
+                break;
             }
         }
-        System.out.println("Congratulations, " + userName + "!");
     }
-
-    public static boolean checkAnswer(String answer, String correctAnswer, String userName) {
-        if (answer.equals(correctAnswer)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
-            System.out.printf("Let's try again, %s!\n", userName);
-            return true;
-        }
-        return false;
+    private static final int MAXROUND = 3;
+    public static void greeting() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+    }
+    public static void greetingEnd(String userName) {
+        System.out.println("Hello, " + userName + "!");
+        System.out.println();
     }
 }

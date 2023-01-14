@@ -3,10 +3,10 @@ package hexlet.code.games;
 import static hexlet.code.Engine.rdmDigits;
 
 public final class Gcd implements Game {
-    public static int isGcd(int digit, int digit2) {
+    public static int isGcd(int num, int num2) {
         int gcd = 1;
-        for (int i = 1; i <= digit && i <= digit2; i++) {
-            if (digit % i == 0 && digit2 % i == 0) {
+        for (int i = 1; i <= num && i <= num2; i++) {
+            if (num % i == 0 && num2 % i == 0) {
                 gcd = i;
             }
         }
@@ -19,10 +19,10 @@ public final class Gcd implements Game {
 
     @Override
     public String[] getGameData() {
-        var digit = rdmDigits();
-        var digit2 = rdmDigits();
-        var correctAnswer = Integer.toString(isGcd(digit, digit2));
-        var question = "Question: " + digit + " " + digit2;
+        var num = rdmDigits();
+        var num2 = rdmDigits();
+        var correctAnswer = Integer.toString(isGcd(num, num2));
+        var question =  num + " " + num2;
         String[] questionAndAnswer = {question, correctAnswer};
         return questionAndAnswer;
     }

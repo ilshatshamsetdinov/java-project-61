@@ -5,17 +5,17 @@ import static hexlet.code.Engine.rdmDigits;
 
 
 public final class Calc implements Game {
-    public static String getAnswer(String operator, int digit, int digit2) {
+    public static String getAnswer(String operator, int num, int num2) {
         var resultAnswer = "";
         switch (operator) {
             case "+" -> {
-                return Integer.toString(digit + digit2);
+                return Integer.toString(num + num2);
             }
             case "-" -> {
-                return Integer.toString(digit - digit2);
+                return Integer.toString(num - num2);
             }
             case "*" -> {
-                return Integer.toString(digit * digit2);
+                return Integer.toString(num * num2);
             }
             default -> {
             }
@@ -28,16 +28,15 @@ public final class Calc implements Game {
     }
     @Override
     public String[] getGameData() {
-        var digit = rdmDigits();
-        var digit2 = rdmDigits();
-        String[] operators = {"+", "-", "*"};
-        final int indexLimit = 2;
-        int rdmOperatorIndex = RandomUtils.nextInt(0, indexLimit);
-        String rdmOperator = operators[rdmOperatorIndex];
-        var resultQuestion = digit + " " + rdmOperator + " " + digit2;
-        var question = "Question: " + resultQuestion;
-        var correctAnswer = getAnswer(rdmOperator, digit, digit2);
+        var num = rdmDigits();
+        var num2 = rdmDigits();
+        int operatorIndex = RandomUtils.nextInt(0, INDEXLIMIT);
+        String operator = OPERATORS[operatorIndex];
+        var question = num + " " + operator + " " + num2;
+        var correctAnswer = getAnswer(operator, num, num2);
         String[] questionAndAnswer = {question, correctAnswer};
         return questionAndAnswer;
     }
+    private static final int INDEXLIMIT = 2;
+    private static final String[] OPERATORS = {"+", "-", "*"};
 }

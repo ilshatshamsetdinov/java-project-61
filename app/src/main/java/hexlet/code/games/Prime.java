@@ -3,9 +3,9 @@ package hexlet.code.games;
 import static hexlet.code.Engine.rdmDigits;
 
 public final class Prime implements Game {
-    private static boolean getPrime(int digit) {
-        for (int i = 2; i < digit; i++) {
-            if (digit % i == 0) {
+    private static boolean isPrime(int num) {
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
                 return false;
             }
         }
@@ -19,9 +19,9 @@ public final class Prime implements Game {
 
     @Override
     public String[] getGameData() {
-        var digit = rdmDigits();
-        var correctAnswer = getPrime(digit) ? "yes" : "no";
-        var question = "Question: " + digit;
+        var num = rdmDigits();
+        var correctAnswer = isPrime(num) ? "yes" : "no";
+        var question = Integer.toString(num);
         String[] questionAndAnswer = {question, correctAnswer};
         return questionAndAnswer;
     }
