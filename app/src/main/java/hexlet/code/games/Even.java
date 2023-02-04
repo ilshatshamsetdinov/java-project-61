@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.rdmDigits;
+
+import static hexlet.code.utils.RandomNumberUtils.rdmDigits;
 
 public final class Even implements Game {
     public static boolean isEven(int num) {

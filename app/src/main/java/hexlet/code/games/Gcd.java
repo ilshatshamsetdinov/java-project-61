@@ -1,11 +1,11 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.rdmDigits;
+import static hexlet.code.utils.RandomNumberUtils.rdmDigits;
 
 public final class Gcd implements Game {
     public static int isGcd(int num, int num2) {
         int gcd = 1;
-        for (int i = 1; i <= num && i <= num2; i++) {
+        for (int i = 1; i <= Math.min(num, num2); i++) {
             if (num % i == 0 && num2 % i == 0) {
                 gcd = i;
             }

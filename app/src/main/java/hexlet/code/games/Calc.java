@@ -1,11 +1,13 @@
 package hexlet.code.games;
 
 import org.apache.commons.lang3.RandomUtils;
-import static hexlet.code.Engine.rdmDigits;
+
+import static hexlet.code.utils.RandomNumberUtils.rdmDigits;
 
 
 public final class Calc implements Game {
-    public static String getAnswer(String operator, int num, int num2) {
+    private static final String[] OPERATORS = {"+", "-", "*"};
+    public static String getOperationResult(String operator, int num, int num2) {
         var resultAnswer = "";
         switch (operator) {
             case "+" -> {
@@ -18,6 +20,8 @@ public final class Calc implements Game {
                 return Integer.toString(num * num2);
             }
             default -> {
+                System.out.println("Operator is not found");
+                System.exit(1);
             }
         }
         return resultAnswer;
@@ -30,13 +34,12 @@ public final class Calc implements Game {
     public String[] getGameData() {
         var num = rdmDigits();
         var num2 = rdmDigits();
-        int operatorIndex = RandomUtils.nextInt(0, INDEXLIMIT);
+        int operatorIndex = RandomUtils.nextInt(0, OPERATORS.length);
         String operator = OPERATORS[operatorIndex];
         var question = num + " " + operator + " " + num2;
-        var correctAnswer = getAnswer(operator, num, num2);
+        var correctAnswer = getOperationResult(operator, num, num2);
         String[] questionAndAnswer = {question, correctAnswer};
         return questionAndAnswer;
     }
-    private static final int INDEXLIMIT = 2;
-    private static final String[] OPERATORS = {"+", "-", "*"};
+
 }

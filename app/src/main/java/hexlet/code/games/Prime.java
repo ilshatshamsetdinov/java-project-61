@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.rdmDigits;
+import static hexlet.code.utils.RandomNumberUtils.rdmDigits;
 
 public final class Prime implements Game {
     private static boolean isPrime(int num) {
+        if (num < 2) {
+            return false;
+        }
         for (int i = 2; i < num; i++) {
             if (num % i == 0) {
                 return false;
